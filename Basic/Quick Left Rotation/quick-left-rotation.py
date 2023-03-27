@@ -1,12 +1,15 @@
 class Solution:
     def leftRotate(self, arr, k, n):
-        if k%n:
+        if k>n:
             k=k%n
-            helper=arr[:k+1]
-            for i in range(0,n-k):
-                arr[i]=arr[i+k]
-            for i in range(0,k):
-                arr[i+n-k]=helper[i]
+        temp=[]*k
+        for i in range(0,k):
+            temp.append(arr[i])
+            
+        for i in range(k,n):
+            arr[i-k]=arr[i]
+        for i in range(0,k):
+            arr[n-k+i]=temp[i]
             
             
 
