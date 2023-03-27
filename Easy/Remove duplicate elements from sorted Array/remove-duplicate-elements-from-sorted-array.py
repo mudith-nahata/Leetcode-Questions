@@ -2,13 +2,15 @@
 
 class Solution:	
 	def remove_duplicate(self, A, N):
-	    j=0
-        for i in range(N-1):
-            if A[i]!=A[i+1]:
-                A[j]=A[i]
-                j+=1
-        A[j]=A[N-1]       
-        return j+1
+	    i=0 # for unique elements
+	    for j in range(1,N):
+	        if A[j]!=A[i]:
+	            A[i+1]=A[j]
+	            i+=1
+	        else:
+	            continue
+        return i+1
+	             
 #{ 
  # Driver Code Starts
 #Initial template for Python
