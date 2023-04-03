@@ -1,18 +1,29 @@
 class Solution:
     def majorityElement(self, a, n):
         #Your code here
-        d={}
-        for num in a:
-            if num in d:
-                d[num]+=1
+        c=0
+        res=0
+        for i in range(n):
+            if c==0:
+                res=a[i]
+            if a[i]==res:
+                c+=1
             else:
-                d[num]=1
-        for num in d:
-            if d[num]>len(a)//2:
-                return num
-        return -1
+                c-=1
+        c=0
+        for i in a:
+            if i == res:
+                c+=1
+        if c>n//2:
+            return res
+        else:
+            return -1
+        
 
                     
+                
+            
+                
                 
             
                 
