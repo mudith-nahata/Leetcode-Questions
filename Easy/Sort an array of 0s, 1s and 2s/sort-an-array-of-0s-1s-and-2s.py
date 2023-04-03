@@ -2,22 +2,19 @@
 
 class Solution:
     def sort012(self,arr,n):
-        zero_count,one_count,two_count=0,0,0
-        for i in range(n):
-            if arr[i]==0:
-                zero_count+=1
-            elif arr[i]==1:
-                one_count+=1
+        low=0
+        mid=0
+        high=n-1
+        while mid<=high:
+            if arr[mid]==0:
+                arr[low],arr[mid]=arr[mid],arr[low]
+                low+=1
+                mid+=1
+            elif arr[mid]==1:
+                mid+=1
             else:
-                two_count+=1
-        for i in range(zero_count):
-            arr[i]=0
-        for i in range(zero_count,zero_count+one_count):
-            arr[i]=1
-        for i in range(zero_count+one_count,n):
-            arr[i]=2
-            
-
+                arr[mid],arr[high]=arr[high],arr[mid]
+                high-=1
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
