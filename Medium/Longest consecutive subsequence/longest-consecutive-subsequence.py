@@ -6,21 +6,20 @@ class Solution:
     # N : size of the array arr[]
     
     #Function to return length of longest subsequence of consecutive integers.
-    def findLongestConseqSubseq(self,arr, N):
-        longest=1
-        arr.sort()
-        curr_count=0
-        last_smaller=-999
-        for i in range(0,len(arr)):
-            if arr[i]-1==last_smaller:
-                curr_count+=1
-                last_smaller=arr[i]
-            elif arr[i]!=last_smaller:
-                curr_count=1
-                last_smaller=arr[i]
-            longest=max(longest,curr_count)
-        return longest
-
+    def findLongestConseqSubseq(self,nums, N):
+        hash_set=set()
+        for num in nums:
+            hash_set.add(num)
+        longest_streak=0
+        for num in nums:
+            if num-1 not in hash_set:
+                current_num=num
+                current_streak=1
+                while current_num+1 in hash_set:
+                    current_num+=1
+                    current_streak+=1
+                longest_streak=max(longest_streak,current_streak)
+        return longest_streak
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
