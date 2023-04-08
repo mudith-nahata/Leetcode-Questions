@@ -1,8 +1,3 @@
-#User function Template for python3
-
-#User function Template for python3
-
-
 import copy
 class Solution:
     def MakeZeros(self, matrix):
@@ -26,6 +21,9 @@ class Solution:
                     matrix[i][j]=s
                     s=0
        # print(matrix)
+
+       # print(matrix)
+
 
        # print(matrix)
 
