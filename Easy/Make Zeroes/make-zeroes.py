@@ -1,5 +1,7 @@
 #User function Template for python3
 
+#User function Template for python3
+
 
 import copy
 class Solution:
@@ -23,6 +25,8 @@ class Solution:
                         matrix[i][j+1]=0
                     matrix[i][j]=s
                     s=0
+       # print(matrix)
+
        # print(matrix)
 
 
