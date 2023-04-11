@@ -22,14 +22,20 @@ class Solution:
                 c2-=1
                     
         # print(el1,el2)
-        l=[]
-        if a.count(el1)>(n//3):
-            l.append(el1)
-        if a.count(el2)>(n//3):
-            l.append(el2)
-        if len(l)==0:
+        c1,c2=0,0
+        for nums in a:
+            if el1==nums:
+                c1+=1
+            if el2==nums:
+                c2+=1
+        ans=[]
+        if c1>len(a)//3:
+            ans.append(el1)
+        if c2>len(a)//3:
+            ans.append(el2)
+        if len(ans)==0:
             return [-1]
-        return l
+        return ans
                 
 #{ 
  # Driver Code Starts
