@@ -1,4 +1,4 @@
-<h2><a href="https://practice.geeksforgeeks.org/problems/find-missing-and-repeating2512/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=find-missing-and-repeating">Find Missing And Repeating</a></h2><h3>Difficulty Level : Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an unsorted array <strong>Arr</strong> of size <strong>N</strong> of positive integers. <strong>One number 'A'</strong> from set {1, 2,....,N} is missing and <strong>one number 'B'</strong> occurs twice in array. Find these two numbers.</span></p>
+<h2><a href="https://practice.geeksforgeeks.org/problems/find-missing-and-repeating2512/0">Find Missing And Repeating</a></h2><h3>Difficulty Level : Medium</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an unsorted array <strong>Arr</strong> of size <strong>N</strong> of positive integers. <strong>One number 'A'</strong> from set {1, 2,....,N} is missing and <strong>one number 'B'</strong> occurs twice in array. Find these two numbers.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
