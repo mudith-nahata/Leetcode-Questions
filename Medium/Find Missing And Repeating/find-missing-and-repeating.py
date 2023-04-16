@@ -1,19 +1,24 @@
 #User function Template for python3
+from typing import List
 class Solution:
-    def findTwoElement( self,a, n): 
-        # code here
-        k1=0
-        k2=0
+    def findTwoElement( self,arr,n):
+        k1,k2=0,0
         for i in range(n):
-            if a[abs(a[i])-1]>0:
-                a[abs(a[i])-1]=-a[abs(a[i])-1]
+            if arr[abs(arr[i])-1]>0:
+                arr[abs(arr[i])-1]=-arr[abs(arr[i])-1]
             else:
-                k1=abs(a[i])
-        for i in range(n):
-            if a[i]>0:
+                k1=abs(arr[i])
+        for i in range(0,n):
+            if arr[i]>0:
                 k2=i+1
         return [k1,k2]
+        
             
+            
+                    
+            
+                
+
 
 #{ 
  # Driver Code Starts
