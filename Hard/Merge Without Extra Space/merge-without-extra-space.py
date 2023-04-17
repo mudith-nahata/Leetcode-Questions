@@ -1,25 +1,30 @@
 #User function Template for python3
-
+import math
 class Solution:
-    
     #Function to merge the arrays.
     def merge(self,arr1,arr2,n,m):
-        a3=[]*(n+m)
-        for num1 in arr1:
-            a3.append(num1)
-        for num2 in arr2:
-            a3.append(num2)
-        a3.sort()
-        k=0
-        for i in range(n):
-            arr1[i]=a3[k]
-            k+=1
-        for i in range(m):
-            arr2[i]=a3[k]
-            k+=1
-        return arr1,arr2
-        
-
+        t=n+m
+        gap=math.ceil(t/2)
+        while gap>0:
+            i=0
+            j=gap
+            while j<n+m:
+                if j<n and i<n:
+                    if arr1[i]>arr1[j]:
+                        arr1[i],arr1[j]=arr1[j],arr1[i]
+                elif j>=n and i<n:
+                    if arr1[i]>arr2[j-n]:
+                        arr1[i],arr2[j-n]=arr2[j-n],arr1[i]
+                elif j>=n and i>=n:
+                    if arr2[i-n]>arr2[j-n]:
+                        arr2[i-n],arr2[j-n]=arr2[j-n],arr2[i-n]
+                i=i+1
+                j=j+1
+            if gap==1:
+                break
+            else:
+                gap=math.ceil(gap/2)
+       
 
 
 #{ 
