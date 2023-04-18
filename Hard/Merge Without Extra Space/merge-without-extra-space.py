@@ -9,7 +9,7 @@ class Solution:
             i=0
             j=gap
             while j<n+m:
-                if j<n and i<n:
+                if i<n and j<n:
                     if arr1[i]>arr1[j]:
                         arr1[i],arr1[j]=arr1[j],arr1[i]
                 elif j>=n and i<n:
@@ -24,7 +24,12 @@ class Solution:
                 break
             else:
                 gap=math.ceil(gap/2)
-       
+                
+
+                    
+                    
+                
+                    
 
 
 #{ 
