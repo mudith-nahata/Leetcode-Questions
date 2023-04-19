@@ -9,7 +9,10 @@ class Solution:
     		elif k[-1][1]<intervals[i][0]:
     		    k.append(intervals[i])
 		    else:
-		        k[-1][1]=max(k[-1][1],intervals[i][1])
+		        if k[-1][1]<intervals[i][1]:
+		            k[-1][1]=intervals[i][1]
+		        else:
+		            k[-1][1]=k[-1][1]
 	    return k
 		        
 		    
