@@ -2,12 +2,20 @@ class Solution:
     #User function Template for python3
     
     #Complete this function
-    def findFloor(self,A,N,X):
-        ans=-1
-        for i in range(N):
-            if A[i]<=X:
-                ans=i
-        return ans
+    def findFloor(self,a,n,x):
+        low=0
+        high=n-1
+        while low<=high:
+            mid=low+(high-low)//2
+            if a[mid]==x:
+                return mid
+            elif a[mid]<x:
+                low=mid+1
+            else:
+                high=mid-1
+        return low-1
+                
+        
 
 
 #{ 
