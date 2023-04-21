@@ -2,11 +2,17 @@
 class Solution:
 
 	def rowWithMax1s(self,arr, n, m):
-	    for j in range(m):
-	        for i in range(n):
-	            if arr[i][j]==1:
-	                return i
-	    return -1
+	    row=-1
+	    i,j=0,m-1
+	    while i<n and j>=0:
+	        if arr[i][j]==1:
+	            row=i
+	            j=j-1
+	        else:
+	            if arr[i][j]==0:
+	                i+=1
+	    return row
+
 	           
 	                
 
