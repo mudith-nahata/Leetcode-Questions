@@ -26,7 +26,8 @@ def find(arr,n,x):
     lhs=lh(arr,x)
     rhs=rh(arr,x)
     if lhs<=rhs:
-        return lhs,rhs
+        k=lhs,rhs
+        return k
     return -1,-1
     
 #{ 
