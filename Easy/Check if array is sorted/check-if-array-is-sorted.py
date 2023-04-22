@@ -1,11 +1,9 @@
 #User function Template for python3
 class Solution:
     def arraySortedOrNot(self, arr, n):
-        if sorted(arr)==arr:
-            return 1
-        else:
+        if sorted(arr)!=arr:
             return 0
-            
+        return 1
 
 
 
