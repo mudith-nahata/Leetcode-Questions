@@ -1,13 +1,22 @@
 #User function Template for python3
 class Solution:
 
-	def count(self,arr, n, x):
-	    c=0
-	    for i in range(0,n):
-	        if arr[i]==x:
-	            c+=1
-	    return c
-	            
+    def count(self,arr, n, x):
+        hashmap={}
+        for ele in arr:
+            if ele not in hashmap:
+                hashmap[ele]=1
+            else:
+                hashmap[ele]+=1
+        c=0
+        for k,v in hashmap.items():
+            if k==x:
+                c=v
+            else:
+                continue
+        return c
+                
+            
 	        
 
 #{ 
