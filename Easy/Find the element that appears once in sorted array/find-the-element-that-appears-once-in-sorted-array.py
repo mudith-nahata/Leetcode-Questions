@@ -1,22 +1,26 @@
 #User function Template for python3
 
 class Solution:
-    def findOnce(self,arr : list, n : int):
+    def findOnce(self,a : list, n : int):
         # Complete this function
-        d={}
-        for ele in arr:
-            if ele in d:
-                d[ele]+=1
+        low=0
+        high=n-1
+        if len(a)==1:
+            return a[0]
+        if a[low]!=a[low+1]:
+            return a[low]
+        if a[high]!=a[high-1]:
+            return a[high]
+        while low<=high:
+            mid=low+(high-low)//2
+            if a[mid]!=a[mid-1] and a[mid]!=a[mid+1]:
+                return a[mid]
+            elif(a[mid]==a[mid+1] and mid%2==0) or (a[mid]==a[mid-1] and mid%2!=0):
+                low=mid+1
             else:
-                d[ele]=1
-        f=0
-        for k,v in d.items():
-            if v==1:
-                f=k
-            else:
-                continue
-        return f
-            
+                high=mid-1
+        return -1
+
 
 #{ 
  # Driver Code Starts
