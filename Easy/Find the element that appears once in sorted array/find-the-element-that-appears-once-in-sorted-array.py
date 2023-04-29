@@ -1,5 +1,4 @@
 #User function Template for python3
-
 class Solution:
     def findOnce(self,a : list, n : int):
         # Complete this function
@@ -20,6 +19,8 @@ class Solution:
             else:
                 high=mid-1
         return -1
+
+            
 
 
 #{ 
