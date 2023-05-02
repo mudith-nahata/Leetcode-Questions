@@ -2,19 +2,16 @@
 class Solution:
 	def matSearch(self,mat, N, M, X):
 		# Complete this function
-		for i in range(N):
-		    low=0
-		    high=M-1
-		    while low<=high:
-		        mid=low+(high-low)//2
-		        if mat[i][mid]==X:
-		            return 1
-		        elif mat[i][mid]<X:
-		            low=mid+1
-		        else:
-		            high=mid-1
-	    return 0
-		
+		row=0;
+        col=M-1
+        while(col>=0 and row<=N-1):
+            if (mat[row][col]==X):
+                return 1
+            elif(mat[row][col]<X):
+                row+=1
+            else:
+                col-=1
+        return 0;
 
 
 #{ 
