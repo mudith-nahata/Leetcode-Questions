@@ -4,13 +4,14 @@
 
 # } Driver Code Ends
 #User function Template for python3
+#User function Template for python3
 from typing import List
 class Solution:
     def solve(self,M: int, K: int, bloomDay: List[int]) -> int:
         if len(bloomDay)<M*K:
             return -1
             
-        low=1
+        low=0
         high=max(bloomDay)
         res=-1
             
@@ -35,6 +36,12 @@ class Solution:
                 low=mid + 1
                 
         return res
+                    
+                    
+                    
+                    
+            
+            
                     
                     
                     
