@@ -2,36 +2,39 @@ class Solution:
     #Function to find minimum number of pages.
     def findPages(self,A, N, M):
         #code here
-        if(M>N):
-            return(-1)
+        if M>N:
+            return -1
         s=0
-        sum=0
         for i in range(N):
-            sum+=arr[i]
-        e=sum
-        ans=-1
-        mid=(s+e)>>1
-        while(s<=e):
-            if(ispossible(arr,N,M,mid)):
-                ans=mid
-                e=mid-1
+            s+=A[i]
+        high=s
+        low=0
+        res=-1
+        while low<=high:
+            mid=low+(high-low)//2
+            if is_possible(A,N,M,mid):
+                res=mid
+                high=mid-1
             else:
-                s=mid+1
-            mid=s+(e-s)//2
-        return ans
-        
-def ispossible(arr,N,M,mid):
-    studentcount=1
-    pagesum=0
+                low=mid+1
+            mid=low+(high-low)//2
+        return res
+def is_possible(A,N,M,mid):
+    alloc_student=1
+    pages=0
     for i in range(N):
-        if(pagesum+arr[i]<=mid):
-            pagesum+=arr[i]
+        if A[i]+pages<=mid:
+            pages+=A[i]
         else:
-            studentcount+=1
-            if(studentcount>M or arr[i]>mid):
+            alloc_student+=1
+            if alloc_student>M or A[i]>mid:
                 return False
-            pagesum=arr[i]
+            pages=A[i]
     return True
+    
+        
+        
+                
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
