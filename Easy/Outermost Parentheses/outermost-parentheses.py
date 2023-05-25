@@ -9,24 +9,22 @@
 
 class Solution:
     def removeOuter(self,s):
-        if len(s)==0:
-            return ""
-        elif len(s)!=0:
-            cnt=0
-            res=""
-            for i in range(len(s)):
-                if cnt==0:
-                    cnt+=1
-                    continue
-                if s[i]=="(":
-                    cnt+=1
-                    if cnt>1:
-                        res+=s[i]
-                elif s[i]==")":
-                    cnt-=1
-                    if cnt>0:
-                        res+=s[i]
+        stack=[]
+        res=""
+        for i in range(len(s)):
+            if s[i]=="(" and len(stack)==0:
+                stack.append(s[i])
+            elif s[i]=="(" and stack[-1]=="(":
+                res+=s[i]
+                stack.append(s[i])
+            elif s[i]==")" and stack[-1]=="(" and len(stack)!=1:
+                res+=s[i]
+                stack.pop()
+            elif s[i]==')' and stack[-1]=="(" and len(stack)==1:
+                stack.pop()
         return res
+                
+        
 #{ 
  # Driver Code Starts.
 if __name__ == '__main__': 
