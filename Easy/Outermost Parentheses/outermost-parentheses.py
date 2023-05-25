@@ -14,7 +14,7 @@ class Solution:
         for i in range(len(s)):
             if s[i]=="(" and len(stack)==0:
                 stack.append(s[i])
-            elif s[i]=="(" and stack[-1]=="(":
+            elif s[i]=="(" and stack[-1]=="(" and len(stack)!=0:
                 res+=s[i]
                 stack.append(s[i])
             elif s[i]==")" and stack[-1]=="(" and len(stack)!=1:
