@@ -2,14 +2,19 @@
 
 class Solution:
     def maxOdd(self, s):
-        for i in range(len(s)-1,-1,-1):
-            if int(s[i])%2!=0:
-                return s[0:i+1]
+        if int(s[-1])%2!=0:
+            return str(s)
+        else:
+            ans=-1
+            for i in range(len(s)):
+                if(int(s[i])%2!=0):
+                    ans=i
+            if ans==-1:
+                return ""
             else:
-                continue
-        return ""
-
-
+                return str(s[0:ans+1])
+            
+                    
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
