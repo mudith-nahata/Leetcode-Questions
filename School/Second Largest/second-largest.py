@@ -1,17 +1,14 @@
 #User function Template for python3
 class Solution:
-    def print2largest(self,arr, n):
-        slargest=-1
-        largest=arr[0]
-        for i in range(0,n):
-            if(arr[i]>largest):
-                slargest=largest
-                largest=arr[i]
-            elif(arr[i]<largest and arr[i]>slargest):
-                slargest=arr[i]
-        return slargest
-                
-	    
+
+	def print2largest(self,arr, n):
+		# code here
+		x=list(set(arr))
+        if len(x)>1:
+            x.sort()
+            return x[-2]
+        else:
+            return -1
 
 #{ 
  # Driver Code Starts
