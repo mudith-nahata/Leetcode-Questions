@@ -1,10 +1,12 @@
 #User function Template for python3
+
 class Solution:
     def arraySortedOrNot(self, arr, n):
-        if sorted(arr)!=arr:
-            return 0
-        return 1
-
+        # code here
+        for i in range(n-1):
+            if arr[i+1]<arr[i]:
+                return False
+        return True
 
 
 #{ 
